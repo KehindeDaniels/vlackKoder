@@ -1,0 +1,126 @@
+---
+title: "CSS-only Theme Toggle"
+subtitle: "Yeah, you heard that right — CSS only!"
+tech: ["CSS", "HTML"]
+image: "/images/css-toggle-preview.png"
+previewUrl: "https://css-theme-toggle.vercel.app"
+---
+
+## The Motivation
+
+Wait — a CSS-only project in a portfolio?  
+I know what you're thinking, but hear me out.
+
+This project was a turning point in my CSS journey. Not only did I build a light/dark mode toggle, but I also implemented a fully responsive dropdown navigation — all without writing a single line of JavaScript.
+
+## Why It Matters
+
+If you ask me why I’m so proud of this project, here’s why:
+
+It was at this moment CSS became second nature.  
+I understood its power. The logic. The flow.  
+And I realized I could now design **any** UI with pure CSS.
+
+## Key Features
+
+- ✅ Light/Dark theme toggle (no JavaScript!)
+- ✅ Dropdown navigation with hover & focus support
+- ✅ Responsive hamburger menu using CSS toggles
+
+---
+
+## Under the Hood
+
+### Theme Toggling
+
+The theme toggle works by checking the `input:checked` state — and using the `:has()` selector to cascade dark mode styles across the layout:
+
+```css
+.theme:has(input:checked)::after {
+  left: 0;
+}
+
+.toggle__mode:has(input:checked) ~ div {
+  --bck--color: rgb(31 41 55);
+  --txt--color: white;
+  --hover-btn: white;
+}
+```
+
+This allows you to update multiple variables using a single user interaction — no JavaScript event listener needed.
+
+### Hamburger Menu
+
+The hamburger icon rotates and transforms into an "X" using `::before` and `::after`, triggered by the checkbox:
+
+```css
+.hamburger:has(input:checked) {
+  rotate: 45deg;
+}
+
+.hamburger:has(input:checked)::before {
+  rotate: -90deg;
+  translate: 0 0.5rem;
+}
+
+.hamburger:has(input:checked)::after {
+  opacity: 0;
+}
+```
+
+The `:has()` selector is magic here — it allows state-based styling just like React state, but with plain CSS.
+
+---
+
+### Dropdown Navigation
+
+Here’s how I made hover/focus dropdowns work with just CSS:
+
+```css
+.main__nav ul li a:hover + ul,
+.main__nav ul li a:focus + ul {
+  visibility: visible;
+  transform: translateY(0);
+}
+```
+
+Combined with semantic HTML and `tabindex`, this ensures keyboard accessibility too.
+
+---
+
+## Learnings
+
+This project taught me how far you can go with CSS alone.
+It also sharpened my understanding of:
+
+- CSS custom properties
+- Flexbox & Grid
+- Advanced selectors like `:has()` and `::after`
+- Responsive, accessible layouts
+
+And most importantly: writing code that feels _fun_.
+
+## Final Thoughts
+
+Sometimes, simplicity is innovation.
+This wasn’t just a theme toggle — it was a demonstration of how far CSS has come and what’s now possible when you understand it deeply.
+
+> 🔗 [Try it live ↗](https://css-theme-toggle.vercel.app)
+
+```
+
+---
+
+✅ Just save this as:
+
+```
+
+content/projects/css-theme-toggle.mdx
+
+```
+
+And update your `projectData.ts` to include this slug (`slug: "css-theme-toggle"`) so it shows up with a case link.
+
+Let me know if you'd like help updating the `projectData` entry or need a card image!
+
+```
