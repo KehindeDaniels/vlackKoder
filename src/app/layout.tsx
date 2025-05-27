@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: "Adeleke Joseph Portfolio",
     images: [
       {
-        url: "https://vlack-koder.vercel.app/og-image.png", // Custom image
+        url: "https://res.cloudinary.com/dk47zom8d/image/upload/v1748348717/oj8snknkyszuxh7qhylq.jpg", // Custom image
         width: 1200,
         height: 630,
         alt: "Adeleke Joseph Portfolio",
