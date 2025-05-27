@@ -30,18 +30,18 @@ export const metadata: Metadata = {
     "MTN MyMoMo",
     "SmartPay Africa",
   ],
-  authors: [{ name: "Adeleke Joseph", url: "https://yourdomain.com" }],
+  authors: [{ name: "Adeleke Joseph", url: "https://vlack-koder.vercel.app/" }],
   creator: "Adeleke Joseph",
-  metadataBase: new URL("https://yourdomain.com"),
+  metadataBase: new URL("https://vlack-koder.vercel.app/"),
   openGraph: {
     title: "Adeleke Joseph – Senior Software Engineer",
     description:
-      "Explore the portfolio of Adeleke Joseph, a seasoned developer specializing in mobile and web solutions at scale.",
-    url: "https://yourdomain.com",
+      "A multidisciplinary developer shaping mobile-first, full-stack solutions trusted by startups and global tech teams.",
+    url: "https://vlack-koder.vercel.app/",
     siteName: "Adeleke Joseph Portfolio",
     images: [
       {
-        url: "https://yourdomain.com/og-image.png", // Custom image
+        url: "https://vlack-koder.vercel.app/og-image.png", // Custom image
         width: 1200,
         height: 630,
         alt: "Adeleke Joseph Portfolio",
