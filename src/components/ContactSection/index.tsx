@@ -1,6 +1,8 @@
 "use client";
 
 import { BsWhatsapp } from "react-icons/bs";
+import SectionHeader from "../SectionHeader";
+import { motion } from "framer-motion";
 
 export default function ContactSection() {
   return (
@@ -10,17 +12,21 @@ export default function ContactSection() {
     >
       <div className="container mx-auto max-w-3xl px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">Let’s Connect</h2>
-          <p className="text-muted-foreground mt-4">
-            Have a project in mind? Let’s talk. I’m open to collaborations,
-            freelance opportunities, or just geeking out over cool UI ideas.
-          </p>
+          <SectionHeader
+            title="Ready to Ship Your Next Product?"
+            subtitle="Reach out to discuss your project, team goals, or engineering needs."
+          />
         </div>
 
-        <form
-          action="https://formspree.io/f/meogdrkk"
+        {/* Animated Form */}
+        <motion.form
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          action="https://formspree.io/f/xkgrlddb"
           method="POST"
-          className="bg-card border border-border rounded-xl p-6 shadow-md space-y-4"
+          className="bg-card dark:bg-black/5 border border-border rounded-xl p-6 shadow-md space-y-4"
         >
           <div className="grid sm:grid-cols-2 gap-4">
             <input
@@ -51,12 +57,18 @@ export default function ContactSection() {
           >
             Send Message
           </button>
-        </form>
+        </motion.form>
 
-        {/* WhatsApp CTA */}
-        <div className="text-center mt-8">
+        {/* Animated WhatsApp CTA */}
+        <motion.div
+          className="text-center mt-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
           <a
-            href="https://wa.me/2348052463881"
+            href="https://wa.me/+2348087316297"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-medium text-[hsl(var(--blue))] hover:underline"
@@ -64,7 +76,7 @@ export default function ContactSection() {
             <BsWhatsapp size={20} />
             Message me on WhatsApp
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
