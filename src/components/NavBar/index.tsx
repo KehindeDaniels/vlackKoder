@@ -83,7 +83,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" aria-label="Home">
-            <div className="w-10 h-10 rounded-lg bg-[#0D1321] text-[hsl(var(--blue))] dark:bg-[#0D1321] flex items-center justify-center border border-[hsl(var(--blue))] text-sm font-bold shadow-sm">
+            <div className="w-10 h-10 rounded-lg bg-black/15 text-[hsl(var(--blue))] dark:bg-white/5 flex items-center justify-center border border-[hsl(var(--blue))] text-sm font-bold shadow-sm">
               JA
             </div>
           </Link>
@@ -118,7 +118,7 @@ export default function Navbar() {
                 <div className="flex flex-col space-y-4">
                   {/* Logo */}
                   <Link href="/" aria-label="Home">
-                    <div className="w-10 h-10 rounded-lg bg-[#0D1321] text-[hsl(var(--blue))] dark:bg-[#0D1321] flex items-center justify-center border border-[hsl(var(--blue))] text-sm font-bold shadow-sm">
+                    <div className="w-10 h-10 rounded-lg bg-black/15 text-[hsl(var(--blue))] dark:bg-white/5 flex items-center justify-center border border-[hsl(var(--blue))] text-sm font-bold shadow-sm">
                       JA
                     </div>
                   </Link>
