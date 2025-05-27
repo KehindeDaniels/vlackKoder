@@ -3,30 +3,20 @@
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { asset } from "../../../public/images";
 
 export default function AboutMe() {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <motion.section
-      id="about"
-      className="py-24 md:py-32 bg-background"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      viewport={{ once: true }}
-    >
+    <section id="about" className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* IMAGE + NAME */}
-          <motion.div
+          <div
             className="flex flex-col items-center md:items-start text-center md:text-left"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
+            data-aos="fade-up"
+            data-aos-delay="100"
           >
             <div className="relative w-60 h-80 md:w-72 md:h-96 rounded-t-xl overflow-hidden shadow-md bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/10">
               <Image
@@ -45,15 +35,13 @@ export default function AboutMe() {
                 Senior Mobile/Web Developer · 6+ Years Experience
               </p>
             </div>
-          </motion.div>
+          </div>
 
           {/* TEXT */}
-          <motion.div
+          <div
             className="text-center md:text-left"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
+            data-aos="fade-up"
+            data-aos-delay="200"
           >
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
               Clean Code Costs Less. Eventually.
@@ -109,23 +97,17 @@ export default function AboutMe() {
             </button>
 
             {/* CTA */}
-            <motion.div
-              className="mt-8"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.4 }}
-              viewport={{ once: true }}
-            >
+            <div className="mt-8" data-aos="fade-up" data-aos-delay="300">
               <Link
                 href="/#projects"
                 className="inline-block rounded-full px-6 py-3 font-medium bg-[hsl(var(--yellow))] text-black shadow hover:brightness-110 transition"
               >
                 Explore My Projects
               </Link>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }

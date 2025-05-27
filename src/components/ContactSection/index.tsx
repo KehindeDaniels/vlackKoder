@@ -2,7 +2,6 @@
 
 import { BsWhatsapp } from "react-icons/bs";
 import SectionHeader from "../SectionHeader";
-import { motion } from "framer-motion";
 
 export default function ContactSection() {
   return (
@@ -11,22 +10,21 @@ export default function ContactSection() {
       className="py-24 md:py-32 bg-background text-foreground"
     >
       <div className="container mx-auto max-w-3xl px-4">
-        <div className="text-center mb-12">
+        {/* Section Header */}
+        <div className="text-center mb-12" data-aos="fade-up">
           <SectionHeader
             title="Ready to Ship Your Next Product?"
             subtitle="Reach out to discuss your project, team goals, or engineering needs."
           />
         </div>
 
-        {/* Animated Form */}
-        <motion.form
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+        {/* Contact Form */}
+        <form
           action="https://formspree.io/f/xkgrlddb"
           method="POST"
           className="bg-card dark:bg-black/5 border border-border rounded-xl p-6 shadow-md space-y-4"
+          data-aos="fade-up"
+          data-aos-delay="200"
         >
           <div className="grid sm:grid-cols-2 gap-4">
             <input
@@ -57,15 +55,13 @@ export default function ContactSection() {
           >
             Send Message
           </button>
-        </motion.form>
+        </form>
 
-        {/* Animated WhatsApp CTA */}
-        <motion.div
+        {/* WhatsApp CTA */}
+        <div
           className="text-center mt-8"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.3 }}
-          viewport={{ once: true }}
+          data-aos="fade-up"
+          data-aos-delay="300"
         >
           <a
             href="https://wa.me/+2348087316297"
@@ -76,7 +72,7 @@ export default function ContactSection() {
             <BsWhatsapp size={20} />
             Message me on WhatsApp
           </a>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -16,10 +16,10 @@ import { ModeToggle } from "../ModeToggle";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Projects", href: "/projects" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
+  { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
+  // { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "#contact" },
 ];
 
 function NavLinks({ isMobile = false }: { isMobile?: boolean }) {
@@ -82,14 +82,10 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
           {/* Logo */}
-          <Link
-            href="/"
-            className="text-2xl font-medium tracking-wide font-sans text-[hsl(var(--blue))] dark:text-[hsl(var(--yellow))]"
-          >
-            K
-            <span className="text-[hsl(var(--yellow))] dark:text-[hsl(var(--blue))]">
-              D
-            </span>
+          <Link href="/" aria-label="Home">
+            <div className="w-10 h-10 rounded-lg bg-[#0D1321] text-[hsl(var(--blue))] dark:bg-[#0D1321] flex items-center justify-center border border-[hsl(var(--blue))] text-sm font-bold shadow-sm">
+              JA
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -120,14 +116,11 @@ export default function Navbar() {
               >
                 <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                 <div className="flex flex-col space-y-4">
-                  <Link
-                    href="/"
-                    className="text-xl font-medium tracking-wide font-sans text-[hsl(var(--blue))] dark:text-[hsl(var(--yellow))]"
-                  >
-                    K
-                    <span className="text-[hsl(var(--yellow))] dark:text-[hsl(var(--blue))]">
-                      D
-                    </span>
+                  {/* Logo */}
+                  <Link href="/" aria-label="Home">
+                    <div className="w-10 h-10 rounded-lg bg-[#0D1321] text-[hsl(var(--blue))] dark:bg-[#0D1321] flex items-center justify-center border border-[hsl(var(--blue))] text-sm font-bold shadow-sm">
+                      JA
+                    </div>
                   </Link>
 
                   <NavLinks isMobile />
