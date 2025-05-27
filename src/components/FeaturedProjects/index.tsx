@@ -15,16 +15,14 @@ export default function FeaturedProject() {
         />
 
         {/* Project Cards with AOS Animations */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {projects.map((project, index) => (
-            <div
-              key={project.id}
-              data-aos="fade-up"
-              data-aos-delay={index * 100} // Stagger effect
-              className="aos-init aos-animate"
-            >
-              <ProjectCard project={project} />
-            </div>
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          // data-aos="fade-up"
+          // data-aos-delay={index * 100}
+          // data-aos-duration="600"
+        >
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       </div>
