@@ -30,7 +30,7 @@ export const projects: Project[] = [
       "Improved onboarding UX",
     ],
     stack: ["React Native", "Next.js", "Firebase", "GetStream", "100ms"],
-    image: "/images/studentpaddy.png",
+    image: "/images/studentpaddy2.png",
     caseStudy:
       "Contributed to both web and mobile builds of Student Paddy. Implemented SEO-friendly landing page, integrated real-time messaging with GetStream, and added live video streaming using 100ms. Supported Firebase for auth, crash reporting, and messaging.",
     liveUrl: "https://www.studentpaddy.com/",
@@ -70,21 +70,21 @@ export const projects: Project[] = [
     liveUrl: "https://www.afropolis.org/",
     githubUrl: "",
   },
-  {
-    id: "5",
-    title: "SmartPay Mobile App",
-    description:
-      "A fintech super app enabling millions across Africa to send and receive payments seamlessly.",
-    metrics: [
-      "20M+ downloads",
-      "Used in 7 countries",
-      "Real-time wallet integrations",
-    ],
-    stack: ["React Native", "Node.js", "GraphQL", "MongoDB"],
-    image: "/images/smartpay.png",
-    caseStudy:
-      "Led React Native development of SmartPay, including wallet, utility payments, and savings modules. Architected navigation, local storage, and CI/CD with OTA updates. Integrated secure APIs and collaborated across teams for QA and deployments.",
-    liveUrl: "https://smartpay.africa",
-    githubUrl: "https://github.com/adeleke/smartpay",
-  },
+  // {
+  //   id: "5",
+  //   title: "SmartPay Mobile App",
+  //   description:
+  //     "A fintech super app enabling millions across Africa to send and receive payments seamlessly.",
+  //   metrics: [
+  //     "20M+ downloads",
+  //     "Used in 7 countries",
+  //     "Real-time wallet integrations",
+  //   ],
+  //   stack: ["React Native", "Node.js", "GraphQL", "MongoDB"],
+  //   image: "/images/smartpay.png",
+  //   caseStudy:
+  //     "Led React Native development of SmartPay, including wallet, utility payments, and savings modules. Architected navigation, local storage, and CI/CD with OTA updates. Integrated secure APIs and collaborated across teams for QA and deployments.",
+  //   liveUrl: "https://smartpay.africa",
+  //   githubUrl: "https://github.com/adeleke/smartpay",
+  // },
 ];
