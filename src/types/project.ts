@@ -6,6 +6,9 @@ export type Project = {
   stack: string[];
   image: string;
   caseStudy: string;
-  liveUrl?: string;
+  liveUrl?: {
+    label: "Web" | "iOS" | "Android";
+    url: string;
+  }[];
   githubUrl?: string;
 };

@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
+import { SiGooglechrome, SiGoogleplay, SiAppstore } from "react-icons/si";
 
 type Props = {
   open: boolean;
@@ -13,8 +14,40 @@ type Props = {
   project: Project;
 };
 
+const getButtonLabelAndIcon = (label: string) => {
+  switch (label.toLowerCase()) {
+    case "web":
+      return {
+        text: "View Web App",
+        icon: (
+          <SiGooglechrome size={16} className="text-white dark:text-black/50" />
+        ),
+      };
+    case "android":
+      return {
+        text: "Get on Play Store",
+        icon: (
+          <SiGoogleplay size={16} className="text-white dark:text-black/50" />
+        ),
+      };
+    case "ios":
+      return {
+        text: "Download on App Store",
+        icon: (
+          <SiAppstore size={16} className="text-white/50 dark:text-black/50" />
+        ),
+      };
+    default:
+      return {
+        text: "Visit Site",
+        icon: (
+          <SiGooglechrome size={16} className="text-black dark:text-black/50" />
+        ),
+      };
+  }
+};
+
 export default function ProjectModal({ open, setOpen, project }: Props) {
-  // ESC close handler
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(false);
@@ -34,18 +67,14 @@ export default function ProjectModal({ open, setOpen, project }: Props) {
           onClick={() => setOpen(false)}
         >
           <motion.div
-            className={`
-              relative w-[95vw] max-w-6xl  overflow-hidden 
-              border border-white/10 backdrop-blur-md rounded-xl shadow-xl
-              bg-[rgba(255,255,255,0.85)] dark:bg-white/5
-            `}
+            className="relative w-[95vw] max-w-6xl overflow-hidden border border-white/10 backdrop-blur-md rounded-xl shadow-xl bg-[rgba(255,255,255,0.85)] dark:bg-white/5"
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.3 }}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 h-full border border-white/10  dark:bg-white/5 rounded-xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 h-full border border-white/10 dark:bg-white/5 rounded-xl">
               {/* LEFT: Image */}
               <div className="relative h-[300px] md:h-auto md:min-h-[500px] w-full">
                 <Image
@@ -91,17 +120,22 @@ export default function ProjectModal({ open, setOpen, project }: Props) {
 
                 {/* Footer CTAs */}
                 <div className="flex gap-3 pt-4 flex-wrap">
-                  {project.liveUrl && (
-                    <Button variant="default" asChild>
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        View Live
-                      </a>
-                    </Button>
-                  )}
+                  {project.liveUrl?.map((link) => {
+                    const { text, icon } = getButtonLabelAndIcon(link.label);
+                    return (
+                      <Button key={link.label} variant="default" asChild>
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2"
+                        >
+                          {icon}
+                          {text}
+                        </a>
+                      </Button>
+                    );
+                  })}
                   {project.githubUrl && (
                     <Button variant="outline" asChild>
                       <a
@@ -115,13 +149,13 @@ export default function ProjectModal({ open, setOpen, project }: Props) {
                   )}
                 </div>
 
-                {/* Close Button */}
+                {/* Close Icon */}
                 <button
                   onClick={() => setOpen(false)}
                   className="absolute top-4 right-4 text-black dark:text-white hover:text-yellow-400 transition"
                   aria-label="Close modal"
                 >
-                  <X size={28} strokeWidth={2.2} />
+                  <X size={24} strokeWidth={2} />
                 </button>
               </div>
             </div>

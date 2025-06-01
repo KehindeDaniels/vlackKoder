@@ -15,8 +15,16 @@ export const projects: Project[] = [
     image: "/images/mymomo.png",
     caseStudy:
       "Led the architecture of the MyMoMo Super App, integrating micro-apps via Module Federation and Re.Pack. Designed the in-house design system and CMS used across all app versions. Set up CI/CD pipelines with CodePush for OTA updates and integrated analytics with Firebase and AppsFlyer.",
-    liveUrl:
-      "https://play.google.com/store/apps/details?id=mtnft.momo.consumer&hl=en",
+    liveUrl: [
+      {
+        label: "iOS",
+        url: "https://apps.apple.com/us/app/mymomo/id6532622230",
+      },
+      {
+        label: "Android",
+        url: "https://play.google.com/store/apps/details?id=mtnft.momo.consumer&hl=en",
+      },
+    ],
     githubUrl: "",
   },
   {
@@ -33,7 +41,20 @@ export const projects: Project[] = [
     image: "/images/studentpaddy2.png",
     caseStudy:
       "Contributed to both web and mobile builds of Student Paddy. Implemented SEO-friendly landing page, integrated real-time messaging with GetStream, and added live video streaming using 100ms. Supported Firebase for auth, crash reporting, and messaging.",
-    liveUrl: "https://www.studentpaddy.com/",
+    liveUrl: [
+      {
+        label: "Web",
+        url: "https://www.studentpaddy.com/",
+      },
+      {
+        label: "iOS",
+        url: "https://apps.apple.com/ng/app/student-paddy-digital-campus/id6444663470",
+      },
+      {
+        label: "Android",
+        url: "https://play.google.com/store/apps/details?id=com.paddy_bare&hl=en",
+      },
+    ],
     githubUrl: "",
   },
   {
@@ -50,7 +71,12 @@ export const projects: Project[] = [
     image: "/images/brightspeed.png",
     caseStudy:
       "Built BrightSpeed's support dashboard with React and Next.js. Designed workflows for ticket resolution and improved app responsiveness. Collaborated with stakeholders to meet usability KPIs.",
-    liveUrl: "https://www.brightspeed.com/",
+    liveUrl: [
+      {
+        label: "Web",
+        url: "https://www.brightspeed.com/",
+      },
+    ],
     githubUrl: "",
   },
   {
@@ -67,24 +93,12 @@ export const projects: Project[] = [
     image: "/images/afropolis.png",
     caseStudy:
       "Built Afropolis’ social platform using Firebase for auth, storage, and messaging. Added Zoom SDK for creator streaming. Indexed database queries to improve response time and reduce cold start lags.",
-    liveUrl: "https://www.afropolis.org/",
+    liveUrl: [
+      {
+        label: "Web",
+        url: "https://www.afropolis.org/",
+      },
+    ],
     githubUrl: "",
   },
-  // {
-  //   id: "5",
-  //   title: "SmartPay Mobile App",
-  //   description:
-  //     "A fintech super app enabling millions across Africa to send and receive payments seamlessly.",
-  //   metrics: [
-  //     "20M+ downloads",
-  //     "Used in 7 countries",
-  //     "Real-time wallet integrations",
-  //   ],
-  //   stack: ["React Native", "Node.js", "GraphQL", "MongoDB"],
-  //   image: "/images/smartpay.png",
-  //   caseStudy:
-  //     "Led React Native development of SmartPay, including wallet, utility payments, and savings modules. Architected navigation, local storage, and CI/CD with OTA updates. Integrated secure APIs and collaborated across teams for QA and deployments.",
-  //   liveUrl: "https://smartpay.africa",
-  //   githubUrl: "https://github.com/adeleke/smartpay",
-  // },
 ];
